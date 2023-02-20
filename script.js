@@ -1,7 +1,53 @@
-var bill = 0;
+
 var list_food = [];
 
-const card_btn_click = (value) =>  {
-    alert(value)
+const addToCart = (food) =>  {
+
+    // lay thong tin food
+    var info = food.parentNode.parentNode;
+    let name = info.children[1].children[0].innerText;
+    let img = info.children[0].src;
+    let price = food.children[0].innerText;
+    let count = 1;
+    let flag = 1;
+    
+    // kiem tra co ton tai trong gio hang chua
+    // neu co roi thi tang so luong len 1
+    for(let i = 0; i < list_food.length; i++){
+        if(list_food[i][0] === name){
+            list_food[i][3]+= count;
+            flag = 0;
+        }
+    }
+
+    // neu chua thi them vao gio
+    if(flag === 1){
+        let item = [name, img, price, count];
+        list_food.push(item);
+        //console.log(item);
+    }
+    document.getElementById("my-cart").innerHTML = showCart();
+}
+
+function showCart(){
+
+    var list = [];
+    var total_Price = 0;
+
+    for(let i = 0; i < list_food.length; i++)
+    {
+        list += 
+                `<tr> 
+                    <td>${list_food[i][0]}</td>
+                    <td>${list_food[i][3]}</td>
+                    <td>${list_food[i][2] * list_food[i][3]} VND</td>
+                </tr>`;
+
+       // Tổng tiền 
+       total_Price += Number(list_food[i][2] * list_food[i][3]);
+    }
+    list += `<br><td>Total: ${total_Price}VND<td/>`
+
+    return list;
 }
 

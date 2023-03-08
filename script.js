@@ -1,5 +1,6 @@
 
 var list_food = [];
+var totalCount = 0;
 
 const addToCart = (food) =>  {
 
@@ -24,9 +25,11 @@ const addToCart = (food) =>  {
     if(flag === 1){
         let item = [name, img, price, count];
         list_food.push(item);
-        //console.log(item);
+        console.log(list_food);
+        totalCount++;
     }
     document.getElementById("my-cart").innerHTML = showCart();
+    document.getElementById("count").innerText = totalCount;
 }
 
 function showCart(){
@@ -38,16 +41,15 @@ function showCart(){
     {
         list += 
                 `<tr> 
-                    <td>${list_food[i][0]}</td>
-                    <td>${list_food[i][3]}</td>
-                    <td>${list_food[i][2] * list_food[i][3]} VND</td>
+                    <td style="text-align: center">${list_food[i][0]}</td>
+                    <td style="text-align: center">${list_food[i][3]}</td>
+                    <td style="text-align: center">${list_food[i][2] * list_food[i][3]} VND</td>
                 </tr>`;
 
        // Tổng tiền 
        total_Price += Number(list_food[i][2] * list_food[i][3]);
     }
-    list += `<br><td>Total: ${total_Price}VND<td/>`
-
+    list += `<br><td colspan=3 style="text-align: center">Tổng: ${total_Price} VND<td/>`
     return list;
 }
 

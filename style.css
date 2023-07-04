@@ -25,24 +25,11 @@ body{
     display: block;
 }
 
+/*--------------------------- HEADER---------------------- */
+
 header{
-    position:absolute;
-    top: 0;
-    left: 15%;
-    z-index: 1000000000;
-
-    border-radius: 0 0 5px 5px;
-    border: 1rem solid rgba(255, 255,255, 0.1);
-
     background-color: white;
-}
-
-.header-content{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    width: 100%;
+    margin-bottom: 1rem;
 }
 
 .logo{
@@ -53,70 +40,59 @@ header{
     text-align: center;
 
     margin-top: 2rem;
-
-}
-
-.logo:hover{
-    cursor: pointer;
 }
 
 .logo span{
     color: var(--orange);
 }
 
-.header-content nav{
-    margin: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-
-.header-content nav a{
-    color: #333;
-    font-size: 1.2rem;
-    margin: 0 1.5rem;
-    text-transform: capitalize;
-}
-
-.active{
-    border-bottom: 2px solid  var(--orange);
-}
-
-.header-content nav:hover a{
-    cursor: pointer;
-}
-
+/* ----------------------------MAIN--------------------- */
 main{
-    width: 100%;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
 }
 
-.main-content{
-    margin: 100px auto;
-    width: 85%;
 
+/* ----------------------------CONTENT------------------- */
+
+.body-left{
+    flex: 2;
+    padding-left: 1rem;
 }
 
-.main-content .card-preview{
+.content-items{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: center;
+    gap: 1rem;
+}
 
+.content-item{
     width: 100%;
+}
+
+.content-item .content-title h2{
+    margin: 1rem 0;
+}
+
+.content-item .item-list{
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.item-list .card{
+    display: flex;
+    flex-direction: column;
+
     border-radius: 10px;
-    box-shadow: 0 0 10px 5px rgba(0,0,0,0.2);
-}
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.1);
 
-.card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 10px 10px 0 0;
-    box-shadow: 0 0 10px 5px rgba(0,0,0,0.2);
+    width: 21%;
+    height: auto;
 }
 
 .card img{
@@ -124,25 +100,35 @@ main{
     height: 100%;
 
     object-fit: fill;
+    border-radius: 5px 5px 0 0;
 }
 
-.card-info{
-    padding: .5rem;
-    border-top: none;
-    border-radius: 0 0 10px 10px;
-
+.card .card-info{
     width: 100%;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-content: center;
 
     background-color: #fff;
 
 }
 
-.card-info button{
-    margin: auto;
+
+.card-info h5{
+    text-transform: capitalize;
+    text-align: left;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    padding: 15px;
+
+}
+
+.card .card-info button{
+    margin: .5rem .5rem;
     border-radius: 10px;
 
     font-size: 12px;
@@ -152,121 +138,58 @@ main{
     height: 30px;
 
     background-color: var(--orange);
-}
-
-.card-info h3{
-    text-transform: capitalize;
-    text-align: left;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-
-    padding: 15px;
-    font-size: 100%;
-
+    cursor: pointer;
 }
 
 
-.content-items{
+/* ---------------------------CART------------------------ */
+.body-right{
+    flex: 1;
+
+}
+
+.cart-info{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin: 1.5rem 0;
-}
-
-.content-item{
-    width: 100%;
-    margin: 3rem 0;
-}
-
-.content-item .content-title{
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-}
+    align-items: left;
 
-.content-item .content-title h2{
-    text-transform: capitalize;
-    margin: 1rem 0;
-}
-
-.content-item .content-title a{
-    color: #437dd9;
-    text-transform: capitalize;
-}
-
-.content-item .content-title a:hover{
-    cursor: pointer;
-}
-
-.content-item-list{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 15px
-}
-
-.rlt{
-    position: relative;
-}
-
-.cart{
-    position: absolute;
-
-    width: 480px;
-
-    right: 50px;
     
-    z-index: 1000000;
-    background-color: #fff;
+}
+
+.cart-bill{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+    gap: 1rem;
+
+    margin-top: 30%;
+    
+    
+}
+
+.cart-bill input{
+    font-size: 18px;
+    padding: .5rem;
+
+    border-radius: .2rem;
+    border: .1rem solid #bebeeb;
+
+    outline: none;
+    width: 80%;
+
+
+}
+
+.cart-bill .btn-booking{
+    width: 30%;
+    font-size: 18px;
+    padding: .5rem;
+
     border-radius: 10px;
-
-    display: none;
-}
-
-.btn-exit{
-    background-color: #fff;
-    font-size: 26px;
-}
-
-
-.cart-icon{
-    position: fixed;
-    
-    top: 200px;
-    left: 90%;
-    z-index: 100;
-
-    background-color: #d3d3d3;
-
-    width: 50px;
-    height: 40px;
-    border-radius: 10% ;
-
+    color: #fff;
+    background-color: var(--orange);
     cursor: pointer;
-
-}
-
-.cart-icon:hover .cart{
-    display: block;
-}
-
-.material-icons{
-    position: absolute;
-    left: 25%;
-    top: 20%;
-    font-size: 24px;
-
-}
-
-#count{
-    color: red;
-    font-size: 20px;
-    font-weight: 700;
-
-    position: absolute;
-    right: 10%;
-    bottom: 0;
-
+    
 }

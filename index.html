@@ -11,166 +11,173 @@
 <body>
     <!-- header -->
     <header>
-        <div class="logo rlt"><span>F</span>ood <span>24</span>/7 <br><span>Bring the world to you</span> </div>
+        <div class="logo"><span>F</span>ood <span>24</span>/7 <br><span>Bring the world to you</span> </div>
     </header>
 
     <!-- cart icon -->
-    <div class="cart-icon">
-        <span class="material-icons">
-            shopping_cart
-        </span>
-        <span id="count"></span>
-        <div class="cart">
-            <table style="margin: 10px 0;">
-                <tr>
-                    <th style="width: 150px;">Tên SP</th>
-                    <th style="width: 100px;">Số lượng</th>
-                    <th style="width: 200px;">Thành tiền</th>
-                </tr>
-                <tbody id="my-cart">
-                    
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <!-- main -->
-    <main >
-        <div class="main-content">
-            <div class="max-witdh">
-                <div class="main-content">
-                    <div class="content-items">
-                        <div class="content-item">
-                            <div class="content-title">
-                                <h2>breakfast</h2>
+    <main>
+        <aside class="body-left">
+            <div class="main-content">
+                <div class="content-items">
+                            <div class="content-item">
+                                <div class="content-title">
+                                    <h2>Ăn sáng</h2>
+                                </div>
+                            
+                                <div class="item-list">
+                                    <div class="card">
+                                        <img src="./asset/pho-ha-noi.jpg" alt="image-pho-ha-noi">
+                                        <div class="card-info">
+                                            <h5>Phở Hà Nội</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span>VND</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="./asset/pho-ha-noi.jpg" alt="image-pho-ha-noi">
+                                        <div class="card-info">
+                                            <h5>Phở Hà Nội</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span>VND</span></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <img src="./asset/bun-bo-hue.jpg" alt="image-bun-bo-hue">
+                                        <div class="card-info">
+                                            <h5>bún bò huế</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span> VND</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="./asset/bun-dau-mam-tom.jpg" alt="image-bun-dau-mam-tom">
+                                        <div class="card-info">
+                                            <h5>bún đậu mắm tôm</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="50000"><span>50000</span><span> VND</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="./asset/banh-mi.jpg" alt="image-banh-mi">
+                                        <div class="card-info">
+                                            <h5>bánh mì</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="15000"><span>15000</span><span> VND</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="content-item">
+                                <div class="content-title">
+                                    <h2>Cơm trưa</h2>
+                                </div>
                                 
+                                <div class="item-list">
+                                    <div class="card">
+                                        <img src="./asset/ca-kho-to.jpg" alt="image-ca-kho-to">
+                                        <div class="card-info">
+                                            <h5>cá kho tộ</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="40000"><span>40000</span><span> VND</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="./asset/thit-kho-tau.jpg" alt="image-thit-kho-tau">
+                                        <div class="card-info">
+                                            <h5>thịt kho tàu</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="35000"><span>35000</span><span> VND</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="./asset/rau-muong-xao-toi.jpg" alt="image-rau-muong-xao-toi">
+                                        <div class="card-info">
+                                            <h5>rau muống xào tỏi</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="25000"><span>25000</span><span> VND</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="./asset/canh-kho-qua.jpg" alt="image-canh-kho-qua">
+                                        <div class="card-info">
+                                            <h5>canh khổ qua</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span> VND</span></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <div class="content-item-list">
-                                <div class="card">
-                                    <img src="./asset/pho-ha-noi.jpg" alt="image-pho-ha-noi">
-                                    <div class="card-info">
-                                        <h3>Phở Hà Nội</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span>VND</span></button>
-                                    </div>
+                            <div class="content-item">
+                                <div class="content-title">
+                                    <h2>Giải khát</h2>
                                 </div>
-                                <div class="card">
-                                    <img src="./asset/bun-bo-hue.jpg" alt="image-bun-bo-hue">
-                                    <div class="card-info">
-                                        <h3>bún bò huế</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span> VND</span></button>
+                                
+                                <div class="item-list">
+                                    <div class="card">
+                                        <img src="./asset/cacao.jpg" alt="image-cacao">
+                                        <div class="card-info">
+                                            <h5>cacao sữa</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>15000</span><span> VND</span></button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="card">
-                                    <img src="./asset/bun-dau-mam-tom.jpg" alt="image-bun-dau-mam-tom">
-                                    <div class="card-info">
-                                        <h3>bún đậu mắm tôm</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="50000"><span>50000</span><span> VND</span></button>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img src="./asset/banh-mi.jpg" alt="image-banh-mi">
-                                    <div class="card-info">
-                                        <h3>bánh mì</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="15000"><span>15000</span><span> VND</span></button>
+                                    <div class="card">
+                                        <img src="./asset/tra-sua.jpg" alt="image-tra-sua">
+                                        <div class="card-info">
+                                            <h5>trà sữa</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>15000</span><span> VND</span></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="content-item">
+                                <div class="content-title">
+                                    <h2>Ăn vặt</h2>
+                                </div>
+                                
+                                <div class="item-list">
+                                    <div class="card">
+                                        <img src="./asset/banh-bong-lan.jpg" alt="image-banh-bong-lan">
+                                        <div class="card-info">
+                                            <h5>bánh bông lan</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>20000</span><span> VND</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="./asset/banh-mi-ngot.jpg" alt="image-banh-mi-ngot">
+                                        <div class="card-info">
+                                            <h5>bánh mì ngọt</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>15000</span><span> VND</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="./asset/banh-trang-tron.jpg" alt="image-banh-trang-tron">
+                                        <div class="card-info">
+                                            <h5>bánh tráng trộn</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>15000</span><span> VND</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>     
                         </div>
-                        <div class="content-item">
-                            <div class="content-title">
-                                <h2>Savoury food</h2>
-                            </div>
-                            
-                            <div class="content-item-list">
-                                <div class="card">
-                                    <img src="./asset/ca-kho-to.jpg" alt="image-ca-kho-to">
-                                    <div class="card-info">
-                                        <h3>cá kho tộ</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="40000"><span>40000</span><span> VND</span></button>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img src="./asset/thit-kho-tau.jpg" alt="image-thit-kho-tau">
-                                    <div class="card-info">
-                                        <h3>thịt kho tàu</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="35000"><span>35000</span><span> VND</span></button>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img src="./asset/rau-muong-xao-toi.jpg" alt="image-rau-muong-xao-toi">
-                                    <div class="card-info">
-                                        <h3>rau muống xào tỏi</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="25000"><span>25000</span><span> VND</span></button>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img src="./asset/canh-kho-qua.jpg" alt="image-canh-kho-qua">
-                                    <div class="card-info">
-                                        <h3>canh khổ qua</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span> VND</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-title">
-                                <h2>drink</h2>
-                            </div>
-                            
-                            <div class="content-item-list">
-                                <div class="card">
-                                    <img src="./asset/cacao.jpg" alt="image-cacao">
-                                    <div class="card-info">
-                                        <h3>cacao sữa</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="30000"><span>15000</span><span> VND</span></button>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img src="./asset/tra-sua.jpg" alt="image-tra-sua">
-                                    <div class="card-info">
-                                        <h3>trà sữa</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="30000"><span>15000</span><span> VND</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="content-item">
-                            <div class="content-title">
-                                <h2>Supper</h2>
-                            </div>
-                            
-                            <div class="content-item-list">
-                                <div class="card">
-                                    <img src="./asset/banh-bong-lan.jpg" alt="image-banh-bong-lan">
-                                    <div class="card-info">
-                                        <h3>bánh bông lan</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="30000"><span>20000</span><span> VND</span></button>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img src="./asset/banh-mi-ngot.jpg" alt="image-banh-mi-ngot">
-                                    <div class="card-info">
-                                        <h3>bánh mì ngọt</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="30000"><span>15000</span><span> VND</span></button>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <img src="./asset/banh-trang-tron.jpg" alt="image-banh-trang-tron">
-                                    <div class="card-info">
-                                        <h3>bánh tráng trộn</h3>
-                                        <button class="card-btn" onclick="addToCart(this)" value="30000"><span>15000</span><span> VND</span></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>     
-                        
-                       
+            
                     </div>
-        
                 </div>
             </div>
-        
-        </div>
+        </aside>
+        <aside class="body-right">
+            <span class="cart-info">
+                <h3 style="margin: 1rem 0;">Giỏ hàng</h3>
+                <table style="margin: 10px 0;">
+                    <tr>
+                        <th style="font-size: 18px; width: 150px; color: #bebebe;">Sản phẩm</th>
+                        <th style="font-size: 18px; width: 70px; color: #bebebe;">Số lượng</th>
+                        <th style="font-size: 18px; width: 200px; color: #bebebe;">Thành tiền</th>
+                    </tr>
+                    <tbody id="my-cart">
+                        
+                    </tbody>
+                </table>
+            </span>
+            
+            <div class="cart-bill">
+                <h3>Thông tin thanh toán</h3>
+                <input id="address" type="text" placeholder="Địa chỉ người nhận..." required>
+                <input id="phone" type="'tel" placeholder="Số điện thoại..." required>
+                <button class="btn-booking" onclick="booking()">Đặt hàng</button>
+            </div>
+        </aside>
     </main>
  
     <script src="./script.js"></script>

@@ -1,6 +1,6 @@
 
-var list_food = [];
-var totalCount = 0;
+var list_food = [];   
+var totalCount = 0;   // so luong san pham trong gio
 
 const addToCart = (food) =>  {
 
@@ -29,7 +29,6 @@ const addToCart = (food) =>  {
         totalCount++;
     }
     document.getElementById("my-cart").innerHTML = showCart();
-    document.getElementById("count").innerText = totalCount;
 }
 
 function showCart(){
@@ -49,7 +48,31 @@ function showCart(){
        // Tổng tiền 
        total_Price += Number(list_food[i][2] * list_food[i][3]);
     }
-    list += `<br><td colspan=3 style="text-align: center">Tổng: ${total_Price} VND<td/>`
+    list += `<br><td style="border-radius: .1rem; color: var(--white); padding: .3rem; background-color: var(--orange); text-align: center; font-size:18px; font-weigth: bold">Tổng: ${total_Price} VND<td/>`
     return list;
 }
 
+
+function booking(){
+    const address = document.getElementById("address").value;
+    const phone = document.getElementById("phone").value;
+
+    const err = "Vui lòng hoàn thiện thông tin thanh toán để đặt hàng";
+    const al = "Thức ăn đang được chuẩn bị và giao hàng đến bạn...";
+    console.log("info:" + address + " " + phone)
+
+    if(list_food.length <= 0){
+        alert("Bạn chưa chọn món")
+        return
+    }
+    if(!address || !phone){
+        alert(err)
+        return
+    }
+    
+    
+    alert(al)
+    
+
+
+}

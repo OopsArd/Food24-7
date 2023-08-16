@@ -25,54 +25,97 @@ const addToCart = (food) =>  {
     if(flag === 1){
         let item = [name, img, price, count];
         list_food.push(item);
-        console.log(list_food);
         totalCount++;
     }
-    document.getElementById("my-cart").innerHTML = showCart();
+    document.getElementById("cart-items").innerHTML = showCart();
 }
 
-function showCart(){
+const showCart = () =>{
 
-    var list = [];
+    var list_add = [];
     var total_Price = 0;
 
     for(let i = 0; i < list_food.length; i++)
     {
-        list += 
-                `<tr> 
-                    <td style="text-align: center">${list_food[i][0]}</td>
-                    <td style="text-align: center">${list_food[i][3]}</td>
-                    <td style="text-align: center">${list_food[i][2] * list_food[i][3]} VND</td>
-                </tr>`;
+        list_add += 
+                `<div class="cart-item">
+                    <div class="cart-item-left"> 
+                        <span class="item-stt">${i+1}</span>
+                        <span class="item-name">${list_food[i][0]}</span>
+                    </div>
+
+                    <div class="cart-item-right">
+                        <span class="item-count">
+                            <button onclick="btnDecrease(this)" class="btn-decrease">-</button>
+                            <span class="count">${list_food[i][3]} </span>
+                            <button onclick="btnIncrease(this)" class="btn-increase">+</button>
+                        </span>
+                        <span class="item-price">${list_food[i][2] * list_food[i][3]} VND</span>
+                    </div>
+                    
+                </div>`;
 
        // Tổng tiền 
        total_Price += Number(list_food[i][2] * list_food[i][3]);
     }
-    list += `<br><td style="border-radius: .1rem; color: var(--white); padding: .3rem; background-color: var(--orange); text-align: center; font-size:18px; font-weigth: bold">Tổng: ${total_Price} VND<td/>`
-    return list;
+    list_add += `<br><div class="total-price">Tổng: ${total_Price} VND<div/>`
+    return list_add;
 }
 
 
-function booking(){
+const booking = () =>{
     const address = document.getElementById("address").value;
     const phone = document.getElementById("phone").value;
 
     const err = "Vui lòng hoàn thiện thông tin thanh toán để đặt hàng";
-    const al = "Thức ăn đang được chuẩn bị và giao hàng đến bạn...";
-    console.log("info:" + address + " " + phone)
+    const err1 = "Bạn chưa chọn món";
+    const success = "Thức ăn đang được chuẩn bị và giao hàng đến bạn...";
+
+
+    let alert_form = document.getElementById('alert');
+    console.log(alert_form?.classList)
+    let alert_content = document.getElementById('alert-content');
 
     if(list_food.length <= 0){
-        alert("Bạn chưa chọn món")
+        alert_content.innerText = err1;
+        alert_form?.classList?.add('active');
         return
     }
     if(!address || !phone){
-        alert(err)
+        alert_content.innerText = err;
+        alert_form?.classList?.add('active');
         return
     }
-    
-    
-    alert(al)
-    
-
-
+    alert_content.innerText = success;
 }
+
+// đóng alert
+const exit = () => {
+    document.getElementById('alert').classList.remove('active')
+}
+
+const target_address = document.getElementById('address');
+target_address.addEventListener('focus', () => {
+    document.getElementById('span-address').classList.add('typing');
+})
+
+target_address.addEventListener('blur', () => {
+    let text = document.getElementById("address").value;
+    if(!text){
+        document.getElementById('span-address').classList.remove('typing');
+    }
+})
+
+const target_phone = document.getElementById('phone');
+target_phone.addEventListener('focus', () => {
+    document.getElementById('span-phone').classList.add('typing');
+})
+
+target_phone.addEventListener('blur', () => {
+    let text = document.getElementById("phone").value;
+    if(!text){
+        document.getElementById('span-phone').classList.remove('typing');
+    }
+})
+
+

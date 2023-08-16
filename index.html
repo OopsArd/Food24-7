@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" >
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <title>Food 24/7</title>
 </head>
 <body>
@@ -29,14 +30,14 @@
                                         <img src="./asset/pho-ha-noi.jpg" alt="image-pho-ha-noi">
                                         <div class="card-info">
                                             <h5>Phở Hà Nội</h5>
-                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span>VND</span></button>
+                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span> VND</span></button>
                                         </div>
                                     </div>
                                     <div class="card">
                                         <img src="./asset/pho-ha-noi.jpg" alt="image-pho-ha-noi">
                                         <div class="card-info">
                                             <h5>Phở Hà Nội</h5>
-                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span>VND</span></button>
+                                            <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span> VND</span></button>
                                         </div>
                                     </div>
 
@@ -50,7 +51,7 @@
                                     <div class="card">
                                         <img src="./asset/bun-dau-mam-tom.jpg" alt="image-bun-dau-mam-tom">
                                         <div class="card-info">
-                                            <h5>bún đậu mắm tôm</h5>
+                                            <h5>bún đậu</h5>
                                             <button class="card-btn" onclick="addToCart(this)" value="50000"><span>50000</span><span> VND</span></button>
                                         </div>
                                     </div>
@@ -159,26 +160,29 @@
         <aside class="body-right">
             <span class="cart-info">
                 <h3 style="margin: 1rem 0;">Giỏ hàng</h3>
-                <table style="margin: 10px 0;">
-                    <tr>
-                        <th style="font-size: 18px; width: 150px; color: #bebebe;">Sản phẩm</th>
-                        <th style="font-size: 18px; width: 70px; color: #bebebe;">Số lượng</th>
-                        <th style="font-size: 18px; width: 200px; color: #bebebe;">Thành tiền</th>
-                    </tr>
-                    <tbody id="my-cart">
-                        
-                    </tbody>
-                </table>
+                <div id="cart-items" class="cart-items">
+                    
+                </div>
             </span>
             
             <div class="cart-bill">
                 <h3>Thông tin thanh toán</h3>
-                <input id="address" type="text" placeholder="Địa chỉ người nhận..." required>
-                <input id="phone" type="'tel" placeholder="Số điện thoại..." required>
+                <div class="cart-bill-input">
+                    <span class="span-address" id="span-address">Địa chỉ người nhận</span>
+                    <input id="address" type="text" required>
+                </div>
+                <div class="cart-bill-input">
+                    <span class="span-phone" id="span-phone">Số điện thoại</span>
+                    <input id="phone" type="'tel" required>
+                </div>
                 <button class="btn-booking" onclick="booking()">Đặt hàng</button>
             </div>
         </aside>
     </main>
+    <div class="alert" id="alert">
+        <button onclick="exit()">x</button>
+        <div id="alert-content" class="alert-content">lerem..</div>
+    </div>
  
     <script src="./script.js"></script>
 </body>

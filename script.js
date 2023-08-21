@@ -28,6 +28,7 @@ const addToCart = (food) =>  {
         totalCount++;
     }
     document.getElementById("cart-items").innerHTML = showCart();
+    document.getElementById("count-product").innerText = list_food.length;
 }
 
 const showCart = () =>{
@@ -51,6 +52,7 @@ const showCart = () =>{
                             <button onclick="btnIncrease(this)" class="btn-increase">+</button>
                         </span>
                         <span class="item-price">${list_food[i][2] * list_food[i][3]} VND</span>
+                        <button oncli="deleteFood(this)" class="btn-delete">Hủy</button>
                     </div>
                     
                 </div>`;
@@ -58,7 +60,7 @@ const showCart = () =>{
        // Tổng tiền 
        total_Price += Number(list_food[i][2] * list_food[i][3]);
     }
-    list_add += `<br><div class="total-price">Tổng: ${total_Price} VND<div/>`
+    list_add += `<br><span class="total-price">Tổng: ${total_Price} VND<span/>`
     return list_add;
 }
 
@@ -87,13 +89,23 @@ const booking = () =>{
         return
     }
     alert_content.innerText = success;
+    alert_form?.classList?.add('active');
 }
+
+//show cart form
+const iconCart = () => document.getElementById("cart-form").style.display = "block";
+
+
+//close cart form
+const closeCartForm = () => document.getElementById("cart-form").style.display = "none";
+
 
 // đóng alert
 const exit = () => {
     document.getElementById('alert').classList.remove('active')
 }
 
+// css input
 const target_address = document.getElementById('address');
 target_address.addEventListener('focus', () => {
     document.getElementById('span-address').classList.add('typing');

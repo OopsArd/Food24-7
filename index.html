@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css" >
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <title>Food 24/7</title>
 </head>
-<body>
+<body id="body">
     <!-- header -->
     <header>
         <div class="logo"><span>F</span>ood <span>24</span>/7 <br><span>Bring the world to you</span> </div>
@@ -22,7 +23,7 @@
                 <div class="content-items">
                             <div class="content-item">
                                 <div class="content-title">
-                                    <h2>Ăn sáng</h2>
+                                    <h2>Thực phẩm</h2>
                                 </div>
                             
                                 <div class="item-list">
@@ -62,14 +63,6 @@
                                             <button class="card-btn" onclick="addToCart(this)" value="15000"><span>15000</span><span> VND</span></button>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="content-item">
-                                <div class="content-title">
-                                    <h2>Cơm trưa</h2>
-                                </div>
-                                
-                                <div class="item-list">
                                     <div class="card">
                                         <img src="./asset/ca-kho-to.jpg" alt="image-ca-kho-to">
                                         <div class="card-info">
@@ -96,6 +89,13 @@
                                         <div class="card-info">
                                             <h5>canh khổ qua</h5>
                                             <button class="card-btn" onclick="addToCart(this)" value="30000"><span>30000</span><span> VND</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <img src="./asset/com-them.png" alt="image-com">
+                                        <div class="card-info">
+                                            <h5>cơm thêm</h5>
+                                            <button class="card-btn" onclick="addToCart(this)" value="2000"><span>2000</span><span> VND</span></button>
                                         </div>
                                     </div>
                                 </div>
@@ -157,31 +157,38 @@
                 </div>
             </div>
         </aside>
-        <aside class="body-right">
-            <span class="cart-info">
-                <h3 style="margin: 1rem 0;">Giỏ hàng</h3>
-                <div id="cart-items" class="cart-items">
-                    
+        <aside class="cart-form" id="cart-form">
+            <div class="body-right">
+                <button class="btn-close-cart" onclick="closeCartForm()" id="btn-close-cart">x</button>
+                <span class="cart-info">
+                    <h3 style="margin: 1rem 0;">Giỏ hàng</h3>
+                    <div id="cart-items" class="cart-items">
+                        
+                    </div>
+                </span>
+                
+                <div class="cart-bill">
+                    <h3>Thông tin thanh toán</h3>
+                    <div class="cart-bill-input">
+                        <span class="span-address" id="span-address">Địa chỉ người nhận</span>
+                        <input id="address" type="text" required>
+                    </div>
+                    <div class="cart-bill-input">
+                        <span class="span-phone" id="span-phone">Số điện thoại</span>
+                        <input id="phone" type="'tel" required>
+                    </div>
+                    <button class="btn-booking" onclick="booking()">Đặt hàng</button>
                 </div>
-            </span>
-            
-            <div class="cart-bill">
-                <h3>Thông tin thanh toán</h3>
-                <div class="cart-bill-input">
-                    <span class="span-address" id="span-address">Địa chỉ người nhận</span>
-                    <input id="address" type="text" required>
-                </div>
-                <div class="cart-bill-input">
-                    <span class="span-phone" id="span-phone">Số điện thoại</span>
-                    <input id="phone" type="'tel" required>
-                </div>
-                <button class="btn-booking" onclick="booking()">Đặt hàng</button>
             </div>
         </aside>
     </main>
     <div class="alert" id="alert">
-        <button onclick="exit()">x</button>
-        <div id="alert-content" class="alert-content">lerem..</div>
+        <div class="alert-tittle">Thông báo</div>
+        <div id="alert-content" class="alert-content"></div>
+        <button class="btn-ok" onclick="exit()">Xác nhận</button>
+    </div>
+    <div class="icon-cart">
+        <button onclick="iconCart()" id="icon-cart-btn"><span class="material-symbols-outlined">shopping_cart</span><span id="count-product"></span></button>
     </div>
  
     <script src="./script.js"></script>
